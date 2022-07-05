@@ -1,0 +1,17 @@
+.width {
+    width: 150px;
+}
+
+.input {
+    width: 50px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.wide {
+    width: 100px;
+}
