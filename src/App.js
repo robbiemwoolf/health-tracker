@@ -1,15 +1,15 @@
-import './App.css';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Header from './Header';
-import Nav from './Nav';
-import Home from './Home';
-import NoMatch from './NoMatch';
-import Pull from "./Pull";
-import Push from "./Push";
-import Lower from "./Lower";
-import Upper from "./Upper";
-import Legs from "./Legs";
-import Skeleton from './Skeleton';
+import './App.css'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import Home from './Home'
+import Header from './utils/header/Header'
+import Nav from './utils/nav/Nav'
+import NoMatch from './utils/NoMatch'
+import Pull from './days/pull/Pull'
+import Push from './days/push/Push'
+import Lower from './days/lower/Lower'
+import Upper from './days/upper/Upper'
+import Legs from './days/legs/Legs'
+import Skeleton from './utils/Skeleton'
 
 function App() {
   return (

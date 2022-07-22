@@ -1,31 +1,27 @@
-import { useState } from "react";
+import { useState } from 'react'
+import './nav/Nav.css'
 
-export default function Upper() {
-
-    const exercises = [ 'Bent Over BB Row', 'Lebert Dips', 'DB Arnold Press', 'Overhead DB Tricep Extension', 'Seated DB Hammer Curls', 'Cable Flies SS Cable Reverse Flies' ];
-
-    const sets = [ 3, 3, '2 - 3', 3, '3 - 4', 3 ];
-
-    const reps = [ '10 - 15', 'Failure', '8 - 12', '10 - 15', '10 - 15', '10 - 12' ]
-
-    const weight = [ 65, '-', 18, 18, 8, 25.5 ]
-
+export default function Skeleton({ day, exercises, sets, reps, weight }) {
     const initialFormState = {
         sets: '',
         reps: '',
         weight: '',
-    };
+    }
 
-    const [formData, setFormData] = useState({ ...initialFormState });
+    const [clicked, setClicked] = useState(false)
+
+    const [formData, setFormData] = useState({ ...initialFormState })
+
     const handleChange = ({ target }) => {
         setFormData({
             ...formData,
             [target.name]: target.value
         })
     }
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log("Submitted:", formData);
+        console.log("Submitted:", formData)
         setFormData({ ...initialFormState})
     }
 
@@ -39,17 +35,17 @@ export default function Upper() {
         <td className='center'>{weight[index]}</td>
         <td className='center'I>
             <form onSubmit={ handleSubmit }>
-                <td className='center'>
+                <td className='center'I>
                     <input id="sets" type='text' name='sets' className="input" onChange={ handleChange } placeholder="sets" value={FormData.sets} />
                 </td>
-                <td className='center'>
+                <td className='center'I>
                     <input id="reps" type='text' name='reps' className="input" onChange={ handleChange } placeholder="reps" value={FormData.reps} />
                 </td>
-                <td className='center'>
+                <td className='center'I>
                     <input id="weight" type='text' name='weight' className="input" onChange={ handleChange } placeholder="weight" value={FormData.weight} />
                 </td>
                 <td className='center'>
-                    <button type='submit'>Save</button>
+                    <button type='submit' onClick={() => setClicked(!clicked)}>{clicked ? "Save" : "Done"}</button>
                 </td>
             </form>
         </td>
@@ -59,7 +55,7 @@ export default function Upper() {
 
     return (
         <>
-        <h1>Upper</h1>
+        <h1>{ day }</h1>
         <table>
             <thead>
                 <tr>
@@ -75,5 +71,5 @@ export default function Upper() {
             </tbody>
         </table>
         </>
-      );
-};
+      )
+}
