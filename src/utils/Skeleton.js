@@ -1,7 +1,14 @@
 import { useState } from 'react'
 import './nav/Nav.css'
 
-export default function Skeleton({ day, exercises, sets, reps, weight }) {
+export default function Skeleton({ values }) {
+
+    const day = values[0][0].day
+    const exercises = values[0][1].exercises
+    const sets = values[0][2].sets
+    const reps = values[0][3].reps
+    const weight = values[0][4].weight
+
     const initialFormState = {
         sets: '',
         reps: '',
